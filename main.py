@@ -1,5 +1,5 @@
 from teams.autoGenAnalyzer import AnalyzerTeam
-from utils.model_client import getModelClient, close_model_client
+from models.model_client import getModelClient, close_model_client
 from utils.docker_utils import getDockerClient, startDocker, stopDocker
 import logging
 import asyncio
@@ -26,6 +26,7 @@ async def main():
 
     finally:
         await stopDocker(docker)
+        await close_model_client(model_client)
 
 
 if __name__ == "__main__":
