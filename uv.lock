@@ -98,7 +98,7 @@ dependencies = [
     { name = "asyncio" },
     { name = "autogen-agentchat" },
     { name = "autogen-core" },
-    { name = "autogen-ext", extra = ["docker"] },
+    { name = "autogen-ext", extra = ["anthropic", "docker"] },
     { name = "dotenv" },
     { name = "openai" },
     { name = "tiktoken" },
@@ -110,7 +110,7 @@ requires-dist = [
     { name = "asyncio", specifier = ">=4.0.0" },
     { name = "autogen-agentchat", specifier = ">=0.7.5" },
     { name = "autogen-core", specifier = ">=0.7.5" },
-    { name = "autogen-ext", extras = ["docker"], specifier = ">=0.7.5" },
+    { name = "autogen-ext", extras = ["anthropic", "docker"], specifier = ">=0.7.5" },
     { name = "dotenv", specifier = ">=0.9.9" },
     { name = "openai", specifier = ">=2.16.0" },
     { name = "tiktoken", specifier = ">=0.12.0" },
@@ -129,6 +129,9 @@ wheels = [
 ]
 
 [package.optional-dependencies]
+anthropic = [
+    { name = "anthropic" },
+]
 docker = [
     { name = "asyncio-atexit" },
     { name = "docker" },

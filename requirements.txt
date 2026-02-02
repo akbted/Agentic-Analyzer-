@@ -4,6 +4,5 @@ autogen-ext
 autogen-ext[docker]
 asyncio
 dotenv
-openai
-anthropic
+autogen-ext[anthropic]
 tiktoken
