@@ -4,12 +4,12 @@ from utils.docker_utils import getDockerClient, startDocker, stopDocker
 from autogen_core import CancellationToken
 import asyncio
 
-def getCodeExecutorAgent(docker):
+def getCodeExecutorAgent(codeExecutor):
 
     codeExecutor = CodeExecutorAgent(
         name="CodeExecutorAgent",
         description="Agent to Execute Python Code in Docker Container",
-        code_executor=docker,
+        code_executor=codeExecutor,
     )
 
     return codeExecutor
