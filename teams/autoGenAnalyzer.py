@@ -1,13 +1,12 @@
 from agents.CodeExecutorAgent import getCodeExecutorAgent
 from agents.DataAnalyserAgent import getDataAnalyzerAgent
-from utils.model_client import getModelClient
 
 from autogen_agentchat.teams import RoundRobinGroupChat
 
-def AnalyzerTeam(docker):
+def AnalyzerTeam(docker, model_client):
 
     codeExecutor = getCodeExecutorAgent(docker)
-    dataAnalyzer = getDataAnalyzerAgent(model_client=getModelClient())
+    dataAnalyzer = getDataAnalyzerAgent(model_client=model_client)
 
     team = RoundRobinGroupChat(
         participants=[dataAnalyzer, codeExecutor],

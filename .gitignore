@@ -11,6 +11,7 @@ wheels/
 
 # ENV
 .env
+google_accesskey.json
 
 # Project Folders
 temp/

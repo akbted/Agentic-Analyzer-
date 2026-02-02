@@ -16,7 +16,7 @@ def getModelClient():
     anthropic_client = AnthropicChatCompletionClient(model="claude-3-7-sonnet-20250219", api_key=MODEL_API_KEY)
     return anthropic_client
 
-async def close_model_cleint(model_client):
+async def close_model_client(model_client):
     logger.info("Closing the Model Client!")
     await model_client.close()
 
