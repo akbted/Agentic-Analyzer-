@@ -3,6 +3,8 @@ from models.model_client import getModelClient, close_model_client
 from utils.docker_utils import getDockerClient, startDocker, stopDocker
 import logging
 import asyncio
+from autogen_agentchat.messages import TextMessage
+from autogen_agentchat.base import TaskResult
 
 logger = logging.getLogger(__file__)
 
@@ -18,9 +20,11 @@ async def main():
         stream = multi_agent_team.run_stream(task="How many files are there in temp folder? If there are any pdf files tell me what is it about ?", )
         
         async for message in stream:
-            print(message)
+            if isinstance(message, TextMessage):
+                print(message.source, ":", message.content)
+            if isinstance(message, TaskResult):
+                print("Stop Reason :" , message.stop_reason)
         
-    
     except Exception as e:
         print(f"Error - {e}")
 
