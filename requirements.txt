@@ -8,3 +8,6 @@ autogen-ext[anthropic]
 tiktoken
 gspread
 google-auth
+autogen-ext[ollama]
+streamlit
+autogen-ext[openai]

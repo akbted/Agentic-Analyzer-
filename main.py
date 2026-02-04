@@ -17,7 +17,7 @@ async def main():
     try:
         await startDocker(docker)
         multi_agent_team = AnalyzerTeam(docker, model_client)
-        stream = multi_agent_team.run_stream(task="How many files are there in temp folder? If there are any pdf files tell me what is it about ?", )
+        stream = multi_agent_team.run_stream(task="Analyse the teams training and tell me the topics each person has done.", )
         
         async for message in stream:
             if isinstance(message, TextMessage):
