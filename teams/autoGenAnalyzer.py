@@ -12,7 +12,7 @@ def AnalyzerTeam(docker, model_client):
 
     team = RoundRobinGroupChat(
         participants=[dataAnalyzer, codeExecutor],
-        description="A data analysis team that iteratively writes and executes Python code to visualize data, compute statistics, and answer queries.",
+        description="What is the progress of each member for the textbook they are reading?",
         max_turns=10,
         termination_condition=text_mention_termination
     )
